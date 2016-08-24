@@ -1,4 +1,4 @@
-# This a collection of small R programs for practice which I will use in Capstone project 
+# R programs to practice intermedite logic which I will try to use in Capstone project 
 ## Author: Pradeep K. Pant, ppant@cpan.org
 ## Date: 22/08/2016
 
@@ -7,8 +7,8 @@ library(downloader)
 library(plyr);
 library(dplyr)
 library(knitr)
-library(readr)
-## Stpe 1: Download the dataset and unzip folder
+
+## Step 1: Download the dataset and unzip folder
 ## Check if directory already exists?
 if(!file.exists("./projectData")){
   dir.create("./projectData")
