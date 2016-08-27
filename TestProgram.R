@@ -31,7 +31,7 @@ files<-list.files(path, recursive=TRUE)
 # Lets make a file connection of the twitter data set
 con <- file("./projectData/final/en_US/en_US.twitter.txt", "r") 
 lineTwitter<-readLines(con) 
-longTwitter<-length(line)
+# Test code
 ##length(con)
 ## Read the first line of text 
 #line<-readLines(con, 1) 
@@ -41,74 +41,67 @@ longTwitter<-length(line)
 #line<-readLines(con, 5) 
 #length(readLines(con))
 
-
-## Close the connection handle when you are done
-#The en_US.blogs.txt  file is how many megabytes?
-# length(twitter)
-#The en_US.twitter.txt has how many lines of text?
+# Code for capastone quiz 1
+# 1. The en_US.blogs.txt  file is how many megabytes?
+file.size("en_US.blogs.txt")
+# [1] 210160014 ~ 200 MB
+# 2. The en_US.twitter.txt has how many lines of text?
 # Step:
-
-#twitter <- readLines(con <- file("./en_US.twitter.txt"), encoding = "UTF-8", skipNul = TRUE)
-#close(con)
-#Checking the length
-#length(twitter)
+length(lineTwitter)
 ## [1] 2360148
-# What is the length of the longest line seen in any of the three en_US data sets?
+
+# 3. What is the length of the longest line seen in any of the three en_US data sets?
+
 # Step: Read in the lines to arrays:
+# Twitter data
+longTwitter<-length(lineTwitter)
 
-# fileName="en_US.blogs.txt"
-# con=file(fileName,open="r")
-# lineBlogs=readLines(con) 
-# longBlogs=length(line)
-# close(con)
-# 
-# fileName="en_US.news.txt"
-# con=file(fileName,open="r")
-# lineNews=readLines(con) 
-# ## Warning in readLines(con): incomplete final line found on 'en_US.news.txt'
-# longNews=length(line)
-# close(con)
-# 
-# fileName="en_US.twitter.txt"
-# con=file(fileName,open="r")
-# lineTwitter=readLines(con) 
-# ## Warning in readLines(con): line 167155 appears to contain an embedded nul
-# ## Warning in readLines(con): line 268547 appears to contain an embedded nul
-# ## Warning in readLines(con): line 1274086 appears to contain an embedded nul
-# ## Warning in readLines(con): line 1759032 appears to contain an embedded nul
-# longTwitter=length(line)
-# close(con)
-# #Need the longest line in each array.
-# longBlogs = nchar(longBlogs)
-# max(nchar(longBlogs))
-# ## [1] 1
-# #Apparently below is max of lineBlogs
-# require(stringi)
-# ## Loading required package: stringi
-# longBlogs<-stri_length(lineBlogs)
-# max(longBlogs)
-# ## [1] 40835
-# #Apparently below is max of lineNews
-# longNews<-stri_length(lineNews)
-# max(longNews)
-# ## [1] 5760
-# #Apparently below is max of lineTwitter
-# longTwitter<-stri_length(lineTwitter)
-# max(longTwitter)
-## [1] 213
-#In the en_US twitter data set, if you divide the number of lines where the word "love" (all lowercase) occurs by the number of lines the word "hate" (all lowercase) occurs, about what do you get?
+# Blog data
+con <- file("./projectData/final/en_US/en_US.blogs.txt", "r")
+lineBlogs<-readLines(con) 
+longBlogs<-length(lineBlogs)
 
-# loveTwitter<-grep("love",lineTwitter)
-# length(loveTwitter)
-# hateTwitter<-grep("hate",lineTwitter)
-# length(hateTwitter)
+# News data
+con <- file("./projectData/final/en_US/en_US.news.txt", "r")
+lineNews<-readLines(con) 
+longNews<-length(lineNews)
 
-#The one tweet in the en_US twitter data set that matches the word "biostats" says what?
-# biostatsTwitter<-grep("biostats",lineTwitter)
-# lineTwitter[biostatsTwitter]
+# Need the longest line in each array.
+longBlogs = nchar(longBlogs)
+max(nchar(longBlogs))
+# [1] 1
+#Apparently below is max of lineBlogs
+require(stringi)
+longBlogs<-stri_length(lineBlogs)
+max(longBlogs)
+# [1] 40835
 
-# How many tweets have the exact characters "A computer once beat me at chess, but it was no match for me at kickboxing". (I.e. the line matches those characters exactly.)
-# close(con) 
-# sentenceTwitter<-grep("A computer once beat me at chess, but it was no match for me at kickboxing",lineTwitter)
-# length(sentenceTwitter)
+#Apparently below is max of lineNews
+longNews<-stri_length(lineNews)
+max(longNews)
+# [1] 5760
+
+# Apparently below is max of lineTwitter
+longTwitter<-stri_length(lineTwitter)
+max(longTwitter)
+# [1] 213
+
+# 4. In the en_US twitter data set, if you divide the number of lines where the word "love" (all lowercase) occurs 
+# by the number of lines the word "hate" (all lowercase) occurs, about what do you get?
+
+loveTwitter<-grep("love",lineTwitter)
+length(loveTwitter)
+hateTwitter<-grep("hate",lineTwitter)
+length(hateTwitter)
+
+# 5. The one tweet in the en_US twitter data set that matches the word "biostats" says what?
+biostatsTwitter<-grep("biostats",lineTwitter)
+lineTwitter[biostatsTwitter]
+
+# 6. How many tweets have the exact characters "A computer once beat me at chess, but it was no match for me at kickboxing". (I.e. the line matches those characters exactly.)
+sentenceTwitter<-grep("A computer once beat me at chess, but it was no match for me at kickboxing",lineTwitter)
+length(sentenceTwitter)
+
+# Close the connection handle when you are done
+close(con)
 
