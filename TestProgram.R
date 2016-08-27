@@ -7,6 +7,7 @@ library(downloader)
 library(plyr);
 library(dplyr)
 library(knitr)
+library(tm)
 
 ## Step 1: Download the dataset and unzip folder
 ## Check if directory already exists?
@@ -29,11 +30,85 @@ path <- file.path("./projectData/final" , "en_US")
 files<-list.files(path, recursive=TRUE)
 # Lets make a file connection of the twitter data set
 con <- file("./projectData/final/en_US/en_US.twitter.txt", "r") 
+lineTwitter<-readLines(con) 
+longTwitter<-length(line)
+##length(con)
 ## Read the first line of text 
-line<-readLines(con, 1) 
+#line<-readLines(con, 1) 
 ## Read the next line of text 
-line<-readLines(con, 1) 
+#line<-readLines(con, 1) 
 ## Read in the next 5 lines of text 
-line<-readLines(con, 5) 
+#line<-readLines(con, 5) 
+#length(readLines(con))
+
+
 ## Close the connection handle when you are done
-close(con) 
+#The en_US.blogs.txt  file is how many megabytes?
+# length(twitter)
+#The en_US.twitter.txt has how many lines of text?
+# Step:
+
+#twitter <- readLines(con <- file("./en_US.twitter.txt"), encoding = "UTF-8", skipNul = TRUE)
+#close(con)
+#Checking the length
+#length(twitter)
+## [1] 2360148
+# What is the length of the longest line seen in any of the three en_US data sets?
+# Step: Read in the lines to arrays:
+
+# fileName="en_US.blogs.txt"
+# con=file(fileName,open="r")
+# lineBlogs=readLines(con) 
+# longBlogs=length(line)
+# close(con)
+# 
+# fileName="en_US.news.txt"
+# con=file(fileName,open="r")
+# lineNews=readLines(con) 
+# ## Warning in readLines(con): incomplete final line found on 'en_US.news.txt'
+# longNews=length(line)
+# close(con)
+# 
+# fileName="en_US.twitter.txt"
+# con=file(fileName,open="r")
+# lineTwitter=readLines(con) 
+# ## Warning in readLines(con): line 167155 appears to contain an embedded nul
+# ## Warning in readLines(con): line 268547 appears to contain an embedded nul
+# ## Warning in readLines(con): line 1274086 appears to contain an embedded nul
+# ## Warning in readLines(con): line 1759032 appears to contain an embedded nul
+# longTwitter=length(line)
+# close(con)
+# #Need the longest line in each array.
+# longBlogs = nchar(longBlogs)
+# max(nchar(longBlogs))
+# ## [1] 1
+# #Apparently below is max of lineBlogs
+# require(stringi)
+# ## Loading required package: stringi
+# longBlogs<-stri_length(lineBlogs)
+# max(longBlogs)
+# ## [1] 40835
+# #Apparently below is max of lineNews
+# longNews<-stri_length(lineNews)
+# max(longNews)
+# ## [1] 5760
+# #Apparently below is max of lineTwitter
+# longTwitter<-stri_length(lineTwitter)
+# max(longTwitter)
+## [1] 213
+#In the en_US twitter data set, if you divide the number of lines where the word "love" (all lowercase) occurs by the number of lines the word "hate" (all lowercase) occurs, about what do you get?
+
+# loveTwitter<-grep("love",lineTwitter)
+# length(loveTwitter)
+# hateTwitter<-grep("hate",lineTwitter)
+# length(hateTwitter)
+
+#The one tweet in the en_US twitter data set that matches the word "biostats" says what?
+# biostatsTwitter<-grep("biostats",lineTwitter)
+# lineTwitter[biostatsTwitter]
+
+# How many tweets have the exact characters "A computer once beat me at chess, but it was no match for me at kickboxing". (I.e. the line matches those characters exactly.)
+# close(con) 
+# sentenceTwitter<-grep("A computer once beat me at chess, but it was no match for me at kickboxing",lineTwitter)
+# length(sentenceTwitter)
+
