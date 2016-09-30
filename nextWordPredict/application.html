@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>nextWordPredict</title>
+<link rel="stylesheet" type="text/css" href="/css/nextWordPredict.ui.css"> 
+</head>
+<body>
+<h1>nextWordPredict</h1>
+<p></p>
+<p>This Shiny App has been made for predicting the next word using input text entered. Natural language processing techniques are used for the prediction. The training data used for building the predictive model is from <a href="https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip">https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip</a>.</p>
+
+<h2>Strategy</h2>
+<p>
+My current thoughts, very much in flux, about the strategy are that a n-grams based approach would be the most effective.
+In particular I am leaning towards a weighted combination of 1- 2- 3- 4-grams (linear interpolation), perhaps assisted by some additional information drawn from an analysis of the association of words in sentences or their distance within it.
+
+An important issue that I have not yet had a chance to ponder sufficiently include the handling of “zeros”, i.e. words not included in the dictionary of the training set or, more importantly with a n-grams approach words that are not seen following a given (n-1) gram. In practice, based on my readings, this problem is tackled with some form of smoothing, that is assigning a probability to the “zeros” (and in turn re-allocating some mass probability away from the observed n-grams).
+I have not yet had a chance to explore the feasibility and effectiveness of methods like Good-Turing or Stupid Backoff.</p>
+
+
+<p>ANALYSIS - STEP 1 : SENTENCE ANNOTATION
+As noted, after some tests, I settled on an approach whereby n-grams tokenization is performed on separate individual sentences, instead of directly on individual rows as loaded from the dataset.
+
+This is motivated by the fact that the tokenizer I have adopted because I found its performance to be more satisfactory, the NGramTokenizer of the RWeka package, does not seem to interrupt its construction of n-grams at what are very likely sentence boundaries.
+
+With next word prediction in mind, it makes a lot of sense to restrict n-grams to sequences of words within the boundaries of a sentence.
+
+Therefore, after cleaning, transforming and filtering the data, the first real operation I perform is the annotation of sentences, for which I have been using the openNLP sentence annotator Maxent_Sent_Token_Annotator(), with its default settings
+</p>
+
+
+<p>ANALYSIS - STEP 2 : N-GRAMS TOKENIZATION
+For the n-grams tokenization I have been using the RWeka Tokenizer NGramTokenizer, passing to it a list of token delimiters.
+
+I have been extracting n-grams for n=1,2,3,4,5n=1,2,3,4,5. It turns out that the 1-grams seem to represent a better definition of words than what is produced by the NWordTokenizer. For instance, this latter breaks don’t in 2, while the NGramTokenizer picks it up as a 1-gram.
+
+I have not been able to run NGramTokenizer on the full vector of sentences for each data set. It fails on some variation of memory-allocation related error (that honestly does not make much sense to me considering that I am running it on machines with 12GB of RAM).
+
+So, I am processing data in chunks of 100,000 sentences, as exemplified by this block of code (the n-grams data for the following section are loaded from saved previous analysis).
+</p>
+<p>
+A look at the n-grams
+
+From the n-grams vectors we can compute frequencies, which will be an important basis for the prediction algorithms.
+
+For now we can take a peek at what are the most frequent 3-grams and 4-grams in the three datasets.</p>
+
+</body>
+</html>
