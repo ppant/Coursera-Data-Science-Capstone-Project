@@ -1,0 +1,47 @@
+.mainSlide {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: red;
+}
+.color1Firstslide {
+		 color: red;
+
+}
+.exclaim .reveal .state-background {
+  background: black;
+} 
+
+.exclaim .reveal h1,
+.exclaim .reveal h2,
+.exclaim .reveal p {
+  color: white;
+}
+* {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+body {
+	background-color: #ffffff;
+}
+ .instructionsColorTime {
+	 color: red;
+ }
+ .predictedWordColor {
+	 color: red;
+ }
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+	background-color: orange;
+}
+.sidebarStyle {
+	border: 2;
+	border-color: red;
+}
+.sidebarHeading {
+	color: red;
+}
