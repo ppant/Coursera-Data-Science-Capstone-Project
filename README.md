@@ -3,7 +3,14 @@ Course repository for Coursera Data Science Specialization Capstone Project
 
 TestProgram.R
 * Code for dataset download and unzipping
-* ReadLine code for eachin file
+* ReadLine code for each file
 * Answer Code for Capstone Quiz 1 questions
+
+ngramsCreate.R
 * Code for creating n-grams (1,2,3,4,5,6 grams)
+
+ui.R server.R .html .css /images
 * Code for UI and Server with images and CSS
+
+.md .Rpres .html .css
+* Code for creating final presentation 
