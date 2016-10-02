@@ -1,6 +1,13 @@
 library(shiny)
 
-shinyUI(fluidPage( tags$head(tags$style(
+shinyUI(fluidPage(titlePanel("Next Word Prediction Application: Data Science Capstone Project"),
+                  hr(),
+                  "In assocation with: ",
+                  br(),
+                  img(src="http://brand.jhu.edu/content/uploads/2014/06/university.logo_.small_.horizontal.blue_.jpg", height=100, width=200),
+                  img(src="https://cdnswiftkeycom.swiftkey.com/images/misc/logo.png", height=50, width=170),
+                  hr(),
+  tags$head(tags$style(
   HTML('
        #mainpanel {
        background-color: #A6DAF7;
@@ -18,7 +25,7 @@ shinyUI(fluidPage( tags$head(tags$style(
              tabPanel("Home",
                       sidebarLayout(
                         sidebarPanel(
-                          includeHTML("sidebar.html")
+                          includeHTML("sidebar.html"),
                           # h4("Instructions"),
                           # HTML('<div class="sidebarStyle">'),
                           # HTML("<p>This Shiny App predicts the next word based on the text you typed."),
@@ -36,12 +43,19 @@ shinyUI(fluidPage( tags$head(tags$style(
                           # hr(),
                           # HTML('<b><div class="instructionsColorTime">Please allow a few seconds for the output to appear.</div></b>'),
                           # HTML("</div>")
-                        ),
-                        mainPanel(id="mainpanel",
+                          hr(),
+                          br(),
+                          img(src = "https://i.stack.imgur.com/2vMyg.jpg?s=64&g=1"),
+                          "This app is created by ",
+                          a("Pradeep K. Pant", href = "ppant@cpan.org"),
+                          hr(),
+                          p(strong(em(a("Connect at Linkedin",href="https://in.linkedin.com/in/ppant")))),
+                          p(strong(em(a("Github: Capstone Project",href="https://github.com/ppant"))))),
+                          mainPanel(id="mainpanel",
                           #includeHTML("mailpanel.html")
                           HTML("<br>"),
                           h4('Enter your word/phrase:'),
-                          tags$textarea(id="text_in", rows=1, cols=80),
+                          tags$textarea(id="text_in", rows=2, cols=125),
                           HTML("<br><br>"),
                           sliderInput("suggestions", "No. of Predictions:",
                                      value = 1.0, min = 1.0, max = 5.0, step = 1.0),
@@ -53,6 +67,8 @@ shinyUI(fluidPage( tags$head(tags$style(
                           h4("Predicted Next Word"),
                           HTML('<div class="predictedWordColor">'),
                           #tags$style(type='text/css', '#word.next {background-color: rgba(255,255,0,0.40); color: green;}'),
+                          #tags$style(type='text/css', '#output {background-color: rgba(0,0,255,0.10); color: blue;font-size:25px;}'), 
+                          #h4(verbatimTextOutput("word.next"),style = "color:green"),  
                           verbatimTextOutput('word.next'),
                           HTML('</div>'),
                           HTML("<br>"),
@@ -60,6 +76,7 @@ shinyUI(fluidPage( tags$head(tags$style(
                           ##h4("Last Word Being Typed"),
                           ##verbatimTextOutput('word.current')
                         )
+                        
                         
                       )
              ),
@@ -69,10 +86,10 @@ shinyUI(fluidPage( tags$head(tags$style(
                                includeHTML("application.html"))
                       )
              ),
-             tabPanel("About Author",
+             tabPanel("References",
                       mainPanel(
                         column(12,
-                               includeHTML("author.html"))
+                               includeHTML("references.html"))
                       )
              )
              
