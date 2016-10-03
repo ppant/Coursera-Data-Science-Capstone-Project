@@ -52,7 +52,7 @@ App and resources
 
 - Application memory usage well under 200MB
 
-- Application is running at: https://ppant.shinyapps.io/nextWordPredict
+- Application is running at: https://ppant.shinyapps.io/nextWordPredict/
 
 - Github link for various code files is here: https://github.com/ppant/Coursera-Data-Science-Capstone-Project. 
 
