@@ -1,11 +1,7 @@
 library(shiny)
 
 shinyUI(fluidPage(titlePanel("Next Word Prediction Application: Data Science Capstone Project"),
-                  hr(),
-                  "In assocation with: ",
-                  br(),
-                  img(src="http://brand.jhu.edu/content/uploads/2014/06/university.logo_.small_.horizontal.blue_.jpg", height=100, width=200),
-                  img(src="https://cdnswiftkeycom.swiftkey.com/images/misc/logo.png", height=50, width=170),
+                  
                   hr(),
   tags$head(tags$style(
   HTML('
@@ -51,6 +47,8 @@ shinyUI(fluidPage(titlePanel("Next Word Prediction Application: Data Science Cap
                           hr(),
                           p(strong(em(a("Connect at Linkedin",href="https://in.linkedin.com/in/ppant")))),
                           p(strong(em(a("Github: Capstone Project",href="https://github.com/ppant"))))),
+                         # p(strong(em(img(src = "https://i.stack.imgur.com/2vMyg.jpg?s=64&g=1",href="https://in.linkedin.com/in/ppant")))),
+                         # p(strong(em(img("Github: Capstone Project",href="https://github.com/ppant"))))),
                           mainPanel(id="mainpanel",
                           #includeHTML("mailpanel.html")
                           HTML("<br>"),
@@ -92,7 +90,10 @@ shinyUI(fluidPage(titlePanel("Next Word Prediction Application: Data Science Cap
                                includeHTML("references.html"))
                       )
              )
-             
-             
-  )
+  ),
+  hr(),
+  "In assocation with:",
+  img(src="http://media.tumblr.com/92a71d62ace9940f8ddd540400444fc4/tumblr_inline_mppo32jFBC1qz4rgp.png", height=70, width=200),
+  img(src="http://brand.jhu.edu/content/uploads/2014/06/university.logo_.small_.horizontal.blue_.jpg", height=100, width=200),
+  img(src="https://cdnswiftkeycom.swiftkey.com/images/misc/logo.png", height=50, width=170)
 ))

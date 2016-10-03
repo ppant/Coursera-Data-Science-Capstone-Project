@@ -9,7 +9,7 @@ shinyServer(function(input, output) {
   
   # Load the n-gram frequencies
   load("nfreq.v5.RData")
-  
+  #load("ngram.RData")
   # Reactively perform word prediction
   observe({
     text.in <- as.character(input$text_in)
