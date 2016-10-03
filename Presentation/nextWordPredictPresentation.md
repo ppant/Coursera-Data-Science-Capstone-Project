@@ -13,9 +13,9 @@ date: October 3, 2016
 Building a predictive text model
 ========================================================
 
-- Create an algorithm for predicting the next word given one or more words as input. 
+- Create an algorithm for predicting the next word given one or more words as input using NLP
 
-- A large corpus of blog and twitter data was loaded and analyzed. 
+- A large corpus of blog, news and twitter data was loaded and analyzed. 
 
 - N-grams were extracted from the corpus and then used for building the predictive model. 
 
