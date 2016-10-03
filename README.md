@@ -14,3 +14,7 @@ ui.R server.R .html .css /images
 
 .md .Rpres .html .css
 * Code for creating final presentation 
+
+* Final shiny app is running at https://ppant.shinyapps.io/nextWordPredict/
+
+* Presentation is available at http://rpubs.com/ppant/capstone-presentation
