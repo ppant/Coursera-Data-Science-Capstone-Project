@@ -6,7 +6,7 @@ shinyUI(fluidPage(titlePanel("Next Word Prediction Application: Data Science Cap
   tags$head(tags$style(
   HTML('
        #mainpanel {
-       background-color: #A6DAF7;
+       #background-color: #A6DAF7;
        }
        #navpanel {
          background-color: orange;
@@ -42,7 +42,7 @@ shinyUI(fluidPage(titlePanel("Next Word Prediction Application: Data Science Cap
                           hr(),
                           br(),
                           "This app is created by ",
-                          a("Pradeep K. Pant", href = "ppant@cpan.org"),
+                          a("Pradeep K. Pant", href = "mailto:ppant@cpan.org"),
                           img(src = "https://i.stack.imgur.com/2vMyg.jpg?s=64&g=1"),
                           hr(),
                           p(img(src = "http://files.softicons.com/download/social-media-icons/free-social-media-icons-by-uiconstock/png/512x512/Linkedin-Icon.png", height=30, width=40), strong(em(a("Connect at Linkedin",href="https://in.linkedin.com/in/ppant")))),
@@ -64,21 +64,37 @@ shinyUI(fluidPage(titlePanel("Next Word Prediction Application: Data Science Cap
                           hr(),
                           h4("Predicted Next Word"),
                           HTML('<div class="predictedWordColor">'),
-                          #tags$style(type='text/css', '#word.next {background-color: rgba(255,255,0,0.40); color: green;}'),
+                          tags$style(type='text/css', '#word_next {color: green;font-size:25px;}'),
+                          tags$style(type='text/css', '#word_current {color: blue;font-size:25px;}'),
+                          #tags$style(type='text/css', '#myoutput1 {background-color: rgba(255,255,0,0.40); color: green;}'), 
                           #tags$style(type='text/css', '#output {background-color: rgba(0,0,255,0.10); color: blue;font-size:25px;}'), 
                           #h4(verbatimTextOutput("word.next"),style = "color:green"),  
-                          verbatimTextOutput('word.next'),
+                          verbatimTextOutput('word_next'),
                           HTML('</div>'),
                           HTML("<br>"),
-                          hr()
-                          ##h4("Last Word Being Typed"),
-                          ##verbatimTextOutput('word.current')
+                          hr(),
+                          h4("Suggestion for last word typed"),
+                          verbatimTextOutput('word_current'),
+                          hr(),
+                          tags$style(type='text/css', '#footer_text {font-family: Verdana, Arial, Helvetica, sans-serif; color: red;font-size:11pt;}'),
+                          HTML('<div id="footer_text">'),
+                          br(),
+                          br(),
+                          br(),
+                          br(),
+                          "In assocation with:",
+                          br(),
+                          img(src="http://media.tumblr.com/92a71d62ace9940f8ddd540400444fc4/tumblr_inline_mppo32jFBC1qz4rgp.png", height=70, width=200),
+                          img(src="http://brand.jhu.edu/content/uploads/2014/06/university.logo_.small_.horizontal.blue_.jpg", height=100, width=200),
+                          img(src="https://cdnswiftkeycom.swiftkey.com/images/misc/logo.png", height=50, width=170),
+                          HTML('</div>')
+                          
                         )
                         
                         
                       )
              ),
-             tabPanel("About application",
+             tabPanel("Design",
                       mainPanel(
                         column(12,
                                includeHTML("application.html"))
@@ -90,10 +106,10 @@ shinyUI(fluidPage(titlePanel("Next Word Prediction Application: Data Science Cap
                                includeHTML("references.html"))
                       )
              )
-  ),
-  hr(),
-  "In assocation with:",
-  img(src="http://media.tumblr.com/92a71d62ace9940f8ddd540400444fc4/tumblr_inline_mppo32jFBC1qz4rgp.png", height=70, width=200),
-  img(src="http://brand.jhu.edu/content/uploads/2014/06/university.logo_.small_.horizontal.blue_.jpg", height=100, width=200),
-  img(src="https://cdnswiftkeycom.swiftkey.com/images/misc/logo.png", height=50, width=170)
+  )
+  # hr(),
+  # "In assocation with:",
+  # img(src="http://media.tumblr.com/92a71d62ace9940f8ddd540400444fc4/tumblr_inline_mppo32jFBC1qz4rgp.png", height=70, width=200),
+  # img(src="http://brand.jhu.edu/content/uploads/2014/06/university.logo_.small_.horizontal.blue_.jpg", height=100, width=200),
+  # img(src="https://cdnswiftkeycom.swiftkey.com/images/misc/logo.png", height=50, width=170)
 ))

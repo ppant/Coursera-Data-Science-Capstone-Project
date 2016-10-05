@@ -19,21 +19,21 @@ shinyServer(function(input, output) {
     if (str_sub(text.in, start=-1) != " " && text.in != "") {
       # Predict current word
       pcw <- predictCurrentWord(text.in, nf, count)
-      output$word.current=renderPrint(cat(pcw, sep = "\n"))
+      output$word_current=renderPrint(cat(pcw, sep = "\n"))
     } else if(nchar(text.in) > 0) {
       # Clear prediction output
-      output$word.current=renderPrint(cat(""))
+      output$word_current=renderPrint(cat(""))
     }
     
     if (str_sub(text.in, start=-1) == " ") {
       # Predict next word
-      output$word.next=renderPrint(cat(cleanPredictNextWord(text.in, nf, count), sep = "\n"))
+      output$word_next=renderPrint(cat(cleanPredictNextWord(text.in, nf, count), sep = "\n"))
     } else if (!is.null(pcw) && lastWords(text.in, 1) %in% pcw) {
       # Full word detected; Predict next word
-      output$word.next=renderPrint(cat(cleanPredictNextWord(text.in, nf, count), sep = "\n"))
+      output$word_next=renderPrint(cat(cleanPredictNextWord(text.in, nf, count), sep = "\n"))
     } else {
       # Clear prediction output
-      output$word.next=renderPrint(cat(""))
+      output$word_next=renderPrint(cat(""))
     }
   })
 })
