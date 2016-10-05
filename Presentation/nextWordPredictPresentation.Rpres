@@ -3,7 +3,7 @@ nextWordPredict
 font-family: 'verdana'
 transition: rotate
 author: Pradeep K. Pant, ppant@cpan.org
-date: October 3, 2016
+date: October 5, 2016
 
 
         Coursera / Johns Hopkins University 
@@ -50,7 +50,7 @@ App and resources
 
 - Average response time under 2-3 seconds
 
-- Application memory usage well under 200MB
+- Application memory usage well under 300MB
 
 - Application is running at: https://ppant.shinyapps.io/nextWordPredict/
 

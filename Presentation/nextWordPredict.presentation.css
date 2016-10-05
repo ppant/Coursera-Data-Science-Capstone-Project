@@ -1,24 +1,6 @@
 .mainSlide {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 11pt;
-	color: red;
-}
-.color1Firstslide {
-		 color: red;
-
-}
-
-.refStyle {
-	background-color: #ffffff;
-}
-.exclaim .reveal .state-background {
-  background: black;
-} 
-
-.exclaim .reveal h1,
-.exclaim .reveal h2,
-.exclaim .reveal p {
-  color: white;
 }
 * {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
