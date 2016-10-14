@@ -2,9 +2,9 @@ name: nextWordPredict
 account: ppant
 server: shinyapps.io
 appId: 129255
-bundleId: 577401
+bundleId: 586179
 url: https://ppant.shinyapps.io/nextWordPredict/
-when: 1475675435.36452
+when: 1476417828.37066
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: about_application.html|about_author.html|author.html|author.jpg|jhu-logo.png|mainpanel.html|nfreq.v5_old.RData|ngram.RData|ui - Copy (2) - Copy.R|ui - Copy (2).R|ui - Copy.R|ui_new_issues.R|images/author_pic.jpg|images/jhu-logo.png|images/swiftkey.png|images/Thumbs.db|www/bootstrap.min_cerulean.css|www/bootstrap.min_lumen.css|www/bootstrap.min_superhero.css|www/bootstrap.min_united - Copy.css
+ignoredFiles: images/author_pic.jpg|images/jhu-logo.png|images/swiftkey.png|images/Thumbs.db|www/bootstrap.min_cerulean.css|www/bootstrap.min_lumen.css|www/bootstrap.min_superhero.css

@@ -9,6 +9,7 @@ shinyServer(function(input, output) {
   
   # Load the n-gram frequencies
   load("nfreq.v5.RData")
+  load("nfreq.twitter.RData")
   #load("ngram.RData")
   # Reactively perform word prediction
   observe({
