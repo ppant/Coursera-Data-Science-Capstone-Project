@@ -8,14 +8,14 @@ TestProgram.R
 * Answers for Capstone quix on NLP (quiz 2 and 3)
 
 ngramsCreate.R
-* Code for creating n-grams (1,2,3,4,5,6 grams)
+* Code for creating n-grams (1, 2, 3, 4, 5, 6 grams)
 
-ui.R server.R .html .css /images
+ui.R, server.R, .html, .css, /images
 * Code for UI and Server with images and CSS
 
-.md .Rpres .html .css
+.md, .Rpres, .html, .css
 * Code for creating final presentation 
 
-* Final shiny app is running at https://ppant.shinyapps.io/nextWordPredict/
+* Shiny app for next word perdiction is running at https://ppant.shinyapps.io/nextWordPredict/
 
-* Presentation is available at http://rpubs.com/ppant/capstone-presentation
+* Presentation explaining approach and alogorithm is available at http://rpubs.com/ppant/capstone-presentation
