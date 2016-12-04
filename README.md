@@ -1,5 +1,5 @@
 # Coursera Data Science Capstone Project
-Course repository for Coursera Data Science Specialization Capstone Project
+Course repository for Coursera Data Science Specialization Capstone Project. Implemented a learning model for text prediction.
 
 TestProgram.R
 * Code for dataset download and unzipping
