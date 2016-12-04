@@ -16,6 +16,6 @@ ui.R, server.R, .html, .css, /images
 .md, .Rpres, .html, .css
 * Code for creating final presentation 
 
-* Shiny app for next word perdiction is running at https://ppant.shinyapps.io/nextWordPredict/
-
-* Presentation explaining approach and alogorithm is available at http://rpubs.com/ppant/capstone-presentation
+**Links**
+ * Shiny app for next word perdiction is running at https://ppant.shinyapps.io/nextWordPredict/
+ * Presentation explaining approach and alogorithm is available at http://rpubs.com/ppant/capstone-presentation
